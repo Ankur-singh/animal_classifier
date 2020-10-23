@@ -1,5 +1,6 @@
 import streamlit as st
 from fastai.vision.all import *
+from utils import download_from_gdrive
 
 def load_learner_(path):
     return load_learner(path)
