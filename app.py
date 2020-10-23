@@ -11,11 +11,12 @@ def load_img(path):
     dim = (500, int((h*500)/w))
     return image.resize(dim)
 
-download_from_gdrive(file_id='1L7Q0swWYEpdDUw8T4ho0kto-1k5fkUZS',  dest_path='./export.pkl')
-learn = load_learner_('export.pkl')
-
 st.markdown("# Animal Classifier")
 st.markdown("Upload an image and the classifier will tell you whether its a horse, dog or bear.")
+
+with st.spinner('Downloading model...'):
+    download_from_gdrive(file_id='1L7Q0swWYEpdDUw8T4ho0kto-1k5fkUZS',  dest_path='./export.pkl')
+learn = load_learner_('export.pkl')
 
 file_bytes = st.file_uploader("Upload a file", type=("png", "jpg", "jpeg", "jfif"))
 if file_bytes:
