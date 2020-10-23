@@ -1,6 +1,4 @@
 # source: https://github.com/ndrplz/google-drive-downloader
-import cv2
-import numpy as np
 import requests
 import zipfile
 import warnings
